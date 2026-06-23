@@ -1,12 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://oj6tlfmvyq0l"]
+[gd_scene load_steps=4 format=3 uid="uid://oj6tlfmvyq0l"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_bo1nx"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gbba"]
-albedo_color = Color(0.933333, 0.435294, 0.27451, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_jjvhh"]
-material = SubResource("StandardMaterial3D_8gbba")
+[ext_resource type="PackedScene" uid="uid://csc8peq8b8rli" path="res://Ball/ball.tscn" id="1_jjgbg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7u77a"]
 
@@ -17,14 +11,7 @@ material = SubResource("StandardMaterial3D_8gbba")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.05005)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-
-[node name="Ball" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("SphereShape3D_bo1nx")
-debug_color = Color(0.586952, 0.530374, 0.402397, 0.42)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/Ball"]
-mesh = SubResource("SphereMesh_jjvhh")
+[node name="Ball" parent="." instance=ExtResource("1_jjgbg")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -34,3 +21,6 @@ shape = SubResource("BoxShape3D_7u77a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
 mesh = SubResource("BoxMesh_jjgbg")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.67038, 0, 0, 0, 1, 0, 0, 0)

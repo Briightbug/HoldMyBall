@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://csc8peq8b8rli"]
+
+[ext_resource type="Script" uid="uid://dydqhawplhsmm" path="res://Ball/ball.gd" id="1_l4sn5"]
+[ext_resource type="Texture2D" path="D:/_PRIVAT/Projects/Godot/seriousgame/Ball/Assets/basketball-texture-free-vector.webp" id="2_65gad"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bo1nx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gbba"]
+albedo_color = Color(0.933333, 0.435294, 0.27451, 1)
+albedo_texture = ExtResource("2_65gad")
+
+[sub_resource type="SphereMesh" id="SphereMesh_jjvhh"]
+material = SubResource("StandardMaterial3D_8gbba")
+
+[node name="Ball" type="RigidBody3D"]
+script = ExtResource("1_l4sn5")
+
+[node name="Ball" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_bo1nx")
+debug_color = Color(0.586952, 0.530374, 0.402397, 0.42)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
+mesh = SubResource("SphereMesh_jjvhh")
