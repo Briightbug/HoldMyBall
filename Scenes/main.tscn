@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://btux4x3tkr5p1" path="res://Scenes/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://csc8peq8b8rli" path="res://Ball/ball.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://dr72nxai2b8e7" path="res://Scenes/timer.gd" id="3_8gbba"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7u77a"]
 
@@ -15,7 +16,7 @@ script = ExtResource("1_bo1nx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.05005)
 
 [node name="Ball" parent="." unique_id=2040412137 instance=ExtResource("1_jjgbg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3196013, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9021683, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=340119171]
 
@@ -29,11 +30,14 @@ mesh = SubResource("BoxMesh_jjgbg")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1847686610]
 transform = Transform3D(1, 0, 0, 0, 1.67038, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Time" type="Panel" parent="." unique_id=594245719]
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1992775170]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
+offset_left = -84.0
+offset_right = 90.0
 offset_bottom = 40.0
 grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_8gbba")
